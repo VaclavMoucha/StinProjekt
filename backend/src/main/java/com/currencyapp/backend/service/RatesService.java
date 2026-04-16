@@ -1,9 +1,11 @@
 package com.currencyapp.backend.service;
 
 import java.time.LocalDateTime;
+import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.currencyapp.backend.client.FrankfurterClient;
+import com.currencyapp.backend.model.ExchangeRate;
 import com.currencyapp.backend.model.FrankfurterResponse;
 import com.currencyapp.backend.model.LogEntry;
 import com.currencyapp.backend.repository.LogRepository;
@@ -29,5 +31,17 @@ public class RatesService {
                 "Fetched latest rates for " + settings.getPreferredCurrency()));
         return response;
     }
+    public ExchangeRate getStrongest() {
+        FrankfurterResponse response = getLatestRates();
+        Map<String, Double> rates = response.getRates();
+        Map.Entry<String, Double> strongest = rates.entrySet().stream().max(Map.Entry.comparingByValue()).get();
+        return new ExchangeRate(strongest.getKey(), strongest.getValue(), response.getDate());
+    }
 
+    public ExchangeRate getWeakest() {
+        FrankfurterResponse response = getLatestRates();
+        Map<String, Double> rates = response.getRates();
+        Map.Entry<String, Double> weakest = rates.entrySet().stream().min(Map.Entry.comparingByValue()).get();
+        return new ExchangeRate(weakest.getKey(), weakest.getValue(), response.getDate());
+    }
 }
