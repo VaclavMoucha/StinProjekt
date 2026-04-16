@@ -22,4 +22,9 @@ public class GlobalExceptionHandler {
     public String handleMethodArgumentNotValid(MethodArgumentNotValidException ex) {
         return ex.getBindingResult().getAllErrors().get(0).getDefaultMessage();
     }
+    @ExceptionHandler(SettingsNotFoundException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public String handleSettingsNotFound(SettingsNotFoundException ex) {
+        return ex.getMessage();
+    }
 }
