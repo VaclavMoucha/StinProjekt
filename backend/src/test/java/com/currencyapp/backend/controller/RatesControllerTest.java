@@ -11,7 +11,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-
+import com.currencyapp.backend.model.ExchangeRate;
 import com.currencyapp.backend.model.FrankfurterResponse;
 import com.currencyapp.backend.service.RatesService;
 
@@ -33,5 +33,23 @@ public class RatesControllerTest {
         FrankfurterResponse result = ratesController.getLatestRates();
 
         assertEquals("EUR", result.getBase());
+    }
+     @Test
+    void getStrongest_returnsExchangeRate() {
+        ExchangeRate rate = new ExchangeRate("CZK", 24.5, "2024-01-01");
+        when(ratesService.getStrongest()).thenReturn(rate);
+
+        ExchangeRate result = ratesController.getStrongest();
+
+        assertEquals("CZK", result.getCurrency());
+    }
+      @Test
+    void getWeakest_returnsExchangeRate() {
+        ExchangeRate rate = new ExchangeRate("GBP", 0.85, "2024-01-01");
+        when(ratesService.getWeakest()).thenReturn(rate);
+
+        ExchangeRate result = ratesController.getWeakest();
+
+        assertEquals("GBP", result.getCurrency());
     }
 }
