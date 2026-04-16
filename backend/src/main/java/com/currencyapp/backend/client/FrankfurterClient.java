@@ -3,6 +3,8 @@ package com.currencyapp.backend.client;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
+
+import com.currencyapp.backend.model.FrankfurterHistoricalResponse;
 import com.currencyapp.backend.model.FrankfurterResponse;
 import java.util.List;
 
@@ -19,8 +21,8 @@ public class FrankfurterClient {
         return restTemplate.getForObject(url, FrankfurterResponse.class);
     }
 
-    public FrankfurterResponse getHistoricalRates(String base, String from, String to, List<String> symbols) {
+    public FrankfurterHistoricalResponse  getHistoricalRates(String base, String from, String to, List<String> symbols) {
         String url = BASE_URL + "/" + from + ".." + to + "?base=" + base + "&symbols=" + String.join(",", symbols);
-        return restTemplate.getForObject(url, FrankfurterResponse.class);
+        return restTemplate.getForObject(url, FrankfurterHistoricalResponse.class);
     }
 }
