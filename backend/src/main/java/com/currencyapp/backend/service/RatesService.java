@@ -1,11 +1,15 @@
 package com.currencyapp.backend.service;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.currencyapp.backend.client.FrankfurterClient;
 import com.currencyapp.backend.model.ExchangeRate;
+import com.currencyapp.backend.model.FrankfurterHistoricalResponse;
 import com.currencyapp.backend.model.FrankfurterResponse;
 import com.currencyapp.backend.model.LogEntry;
 import com.currencyapp.backend.repository.LogRepository;
@@ -43,5 +47,32 @@ public class RatesService {
         Map<String, Double> rates = response.getRates();
         Map.Entry<String, Double> weakest = rates.entrySet().stream().min(Map.Entry.comparingByValue()).get();
         return new ExchangeRate(weakest.getKey(), weakest.getValue(), response.getDate());
+    }
+        public List<ExchangeRate> getAverage(String from, String to) {
+        var settings = settingsRepository.getSettings();
+        FrankfurterHistoricalResponse response = frankfurterClient.getHistoricalRates(
+                settings.getPreferredCurrency(), from, to,
+                settings.getSelectedCurrencies());
+
+        Map<String, List<Double>> ratesPerCurrency = new HashMap<>();
+
+        for (Map<String, Double> dayRates : response.getRates().values()) {
+            for (Map.Entry<String, Double> entry : dayRates.entrySet()) {
+                ratesPerCurrency
+                        .computeIfAbsent(entry.getKey(), k -> new ArrayList<>())
+                        .add(entry.getValue());
+            }
+        }
+
+        List<ExchangeRate> result = new ArrayList<>();
+        for (Map.Entry<String, List<Double>> entry : ratesPerCurrency.entrySet()) {
+            double average = entry.getValue().stream()
+                    .mapToDouble(Double::doubleValue)
+                    .average()
+                    .getAsDouble();
+            result.add(new ExchangeRate(entry.getKey(), average, from + " to " + to));
+        }
+
+        return result;
     }
 }
