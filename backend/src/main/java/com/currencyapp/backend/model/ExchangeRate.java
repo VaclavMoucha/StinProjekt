@@ -10,5 +10,5 @@ import lombok.NoArgsConstructor;
 public class ExchangeRate {
     private String currency;
     private double rate;
-    String date;
+    private String date;
 }
