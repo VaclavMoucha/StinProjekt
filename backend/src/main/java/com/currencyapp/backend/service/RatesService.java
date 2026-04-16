@@ -95,4 +95,9 @@ public class RatesService {
 
         return result;
     }
+
+    public Map<String, String> getCurrencies() {
+        logger.info("Fetching available currencies");
+        return frankfurterClient.getCurrencies();
+    }
 }
