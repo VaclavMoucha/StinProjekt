@@ -27,14 +27,15 @@ public class RatesControllerTest {
     @Test
     void getLatestRates_returnsResponse() {
         FrankfurterResponse response = new FrankfurterResponse("EUR", "2024-01-01",
-            Map.of("USD", 1.08, "CZK", 24.5));
+                Map.of("USD", 1.08, "CZK", 24.5));
         when(ratesService.getLatestRates()).thenReturn(response);
 
         FrankfurterResponse result = ratesController.getLatestRates();
 
         assertEquals("EUR", result.getBase());
     }
-     @Test
+
+    @Test
     void getStrongest_returnsExchangeRate() {
         ExchangeRate rate = new ExchangeRate("CZK", 24.5, "2024-01-01");
         when(ratesService.getStrongest()).thenReturn(rate);
@@ -43,7 +44,8 @@ public class RatesControllerTest {
 
         assertEquals("CZK", result.getCurrency());
     }
-      @Test
+
+    @Test
     void getWeakest_returnsExchangeRate() {
         ExchangeRate rate = new ExchangeRate("GBP", 0.85, "2024-01-01");
         when(ratesService.getWeakest()).thenReturn(rate);
@@ -51,5 +53,15 @@ public class RatesControllerTest {
         ExchangeRate result = ratesController.getWeakest();
 
         assertEquals("GBP", result.getCurrency());
+    }
+
+    @Test
+    void getCurrencies_returnsMap() {
+        Map<String, String> currencies = Map.of("USD", "US Dollar", "CZK", "Czech Koruna");
+        when(ratesService.getCurrencies()).thenReturn(currencies);
+
+        Map<String, String> result = ratesController.getCurrencies();
+
+        assertEquals(2, result.size());
     }
 }
