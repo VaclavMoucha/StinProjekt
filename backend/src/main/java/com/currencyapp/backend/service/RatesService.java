@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.currencyapp.backend.client.FrankfurterClient;
+import com.currencyapp.backend.exception.SettingsNotFoundException;
 import com.currencyapp.backend.model.ExchangeRate;
 import com.currencyapp.backend.model.FrankfurterHistoricalResponse;
 import com.currencyapp.backend.model.FrankfurterResponse;
@@ -29,6 +30,10 @@ public class RatesService {
 
     public FrankfurterResponse getLatestRates() {
         var settings = settingsRepository.getSettings();
+        if (settings == null) {
+            logger.info("Settings not found when fetching latest rates");
+            throw new SettingsNotFoundException();
+        }
         logger.info("Fetching latest rates for {}", settings.getPreferredCurrency());
         try {
             var response = frankfurterClient.getLatestRates(
