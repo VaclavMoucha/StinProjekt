@@ -7,6 +7,7 @@ import org.springframework.web.client.RestTemplate;
 import com.currencyapp.backend.model.FrankfurterHistoricalResponse;
 import com.currencyapp.backend.model.FrankfurterResponse;
 import java.util.List;
+import java.util.Map;
 
 @Component
 public class FrankfurterClient {
@@ -21,8 +22,13 @@ public class FrankfurterClient {
         return restTemplate.getForObject(url, FrankfurterResponse.class);
     }
 
-    public FrankfurterHistoricalResponse  getHistoricalRates(String base, String from, String to, List<String> symbols) {
+    public FrankfurterHistoricalResponse getHistoricalRates(String base, String from, String to, List<String> symbols) {
         String url = BASE_URL + "/" + from + ".." + to + "?base=" + base + "&symbols=" + String.join(",", symbols);
         return restTemplate.getForObject(url, FrankfurterHistoricalResponse.class);
+    }
+
+    public Map<String, String> getCurrencies() {
+        String url = BASE_URL + "/currencies";
+        return restTemplate.getForObject(url, Map.class);
     }
 }
