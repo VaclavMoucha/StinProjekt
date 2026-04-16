@@ -27,6 +27,7 @@ public class FrankfurterClient {
         return restTemplate.getForObject(url, FrankfurterHistoricalResponse.class);
     }
 
+    @SuppressWarnings("unchecked")
     public Map<String, String> getCurrencies() {
         String url = BASE_URL + "/currencies";
         return restTemplate.getForObject(url, Map.class);
