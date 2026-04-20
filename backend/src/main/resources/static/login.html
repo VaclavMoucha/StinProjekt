@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-cs="Směnárenská aplikace" data-en="Currency App">Currency App</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="login-container">
+      <h1 data-cs="Směnárenská aplikace" data-en="Currency App">Currency App</h1>
+      <h2 data-cs="Přihlášení" data-en="Login">Login</h2>
+
+      <form action="/login" method="POST">
+          <div class="form-group">
+            <label data-cs="Uživatelské jméno" data-en="Username">Username</label>
+            <input type="text" id="username" name="username" placeholder="admin" required />
+          </div>
+
+          <div class="form-group">
+            <label data-cs="Heslo" data-en="Password">Password</label>
+            <input type="password" id="password" name="password" placeholder="••••••••" required />
+          </div>
+
+          <button type="submit" data-cs="Přihlásit se" data-en="Login">Login</button>
+      </form>
+    </div>
+
+    </body>
+</html>
