@@ -1,34 +1,239 @@
-2026-04-16 20:29:43 [INFO] c.c.backend.BackendApplication - Starting BackendApplication using Java 21.0.10 with PID 5828 (C:\Users\vacla\OneDrive\Dokumenty\StinProjekt\backend\target\classes started by vacla in C:\Users\vacla\OneDrive\Dokumenty\StinProjekt\backend)
-2026-04-16 20:29:43 [DEBUG] c.c.backend.BackendApplication - Running with Spring Boot v4.0.5, Spring v7.0.6
-2026-04-16 20:29:43 [INFO] c.c.backend.BackendApplication - No active profile set, falling back to 1 default profile: "default"
-2026-04-16 20:29:43 [INFO] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2026-04-16 20:29:43 [INFO] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2026-04-16 20:29:45 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-2026-04-16 20:29:45 [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-04-16 20:29:45 [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.20]
-2026-04-16 20:29:45 [INFO] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 2351 ms
-2026-04-16 20:29:46 [INFO] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
-2026-04-16 20:29:48 [INFO] o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
-2026-04-16 20:29:48 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-2026-04-16 20:29:48 [INFO] c.c.backend.BackendApplication - Started BackendApplication in 5.567 seconds (process running for 6.839)
-2026-04-16 20:29:48 [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-04-16 20:29:48 [INFO] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2026-04-16 20:29:48 [INFO] o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
-2026-04-16 20:29:54 [INFO] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
-2026-04-16 20:29:54 [INFO] o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2026-04-16 20:29:54 [INFO] o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
-2026-04-16 20:29:54 [INFO] c.c.backend.BackendApplication - Starting BackendApplication using Java 21.0.10 with PID 5828 (C:\Users\vacla\OneDrive\Dokumenty\StinProjekt\backend\target\classes started by vacla in C:\Users\vacla\OneDrive\Dokumenty\StinProjekt\backend)
-2026-04-16 20:29:54 [DEBUG] c.c.backend.BackendApplication - Running with Spring Boot v4.0.5, Spring v7.0.6
-2026-04-16 20:29:54 [INFO] c.c.backend.BackendApplication - No active profile set, falling back to 1 default profile: "default"
-2026-04-16 20:29:55 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-2026-04-16 20:29:55 [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-04-16 20:29:55 [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.20]
-2026-04-16 20:29:55 [INFO] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 553 ms
-2026-04-16 20:29:55 [INFO] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
-2026-04-16 20:29:55 [INFO] o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
-2026-04-16 20:29:55 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-2026-04-16 20:29:55 [INFO] c.c.backend.BackendApplication - Started BackendApplication in 0.985 seconds (process running for 14.127)
-2026-04-16 20:29:55 [INFO] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
-2026-04-16 21:41:18 [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-04-16 21:41:18 [INFO] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2026-04-16 21:41:18 [INFO] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-04-20 13:17:04 [INFO] c.c.backend.BackendApplication - Starting BackendApplication using Java 21.0.10 with PID 29984 (C:\Users\vacla\OneDrive\Dokumenty\StinProjekt\backend\target\classes started by vacla in C:\Users\vacla\OneDrive\Dokumenty\StinProjekt\backend)
+2026-04-20 13:17:04 [DEBUG] c.c.backend.BackendApplication - Running with Spring Boot v4.0.5, Spring v7.0.6
+2026-04-20 13:17:04 [INFO] c.c.backend.BackendApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-20 13:17:05 [INFO] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-04-20 13:17:05 [INFO] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-04-20 13:17:08 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-20 13:17:08 [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-20 13:17:08 [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-04-20 13:17:08 [INFO] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 3625 ms
+2026-04-20 13:17:10 [INFO] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-20 13:17:12 [INFO] o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-04-20 13:17:12 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-04-20 13:17:12 [INFO] c.c.backend.BackendApplication - Started BackendApplication in 8.772 seconds (process running for 10.317)
+2026-04-20 13:17:12 [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-20 13:17:12 [INFO] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-04-20 13:17:12 [INFO] o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2026-04-20 13:58:59 [INFO] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-04-20 13:58:59 [INFO] o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-20 13:59:00 [INFO] o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-04-20 13:59:00 [INFO] c.c.backend.BackendApplication - Starting BackendApplication using Java 21.0.10 with PID 29984 (C:\Users\vacla\OneDrive\Dokumenty\StinProjekt\backend\target\classes started by vacla in C:\Users\vacla\OneDrive\Dokumenty\StinProjekt\backend)
+2026-04-20 13:59:00 [DEBUG] c.c.backend.BackendApplication - Running with Spring Boot v4.0.5, Spring v7.0.6
+2026-04-20 13:59:00 [INFO] c.c.backend.BackendApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-20 13:59:02 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-20 13:59:02 [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-20 13:59:02 [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-04-20 13:59:02 [INFO] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1471 ms
+2026-04-20 13:59:02 [INFO] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-20 13:59:03 [INFO] o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-04-20 13:59:03 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-04-20 13:59:03 [INFO] c.c.backend.BackendApplication - Started BackendApplication in 2.532 seconds (process running for 2520.928)
+2026-04-20 13:59:03 [INFO] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   WebMvcAutoConfiguration.ResourceChainCustomizerConfiguration matched:
+      - @ConditionalOnEnabledResourceChain enabled (OnEnabledResourceChainCondition)
+
+
+Negative matches:
+-----------------
+
+    None
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2026-04-20 14:47:58 [INFO] c.c.backend.BackendApplication - Starting BackendApplication using Java 21.0.10 with PID 30348 (C:\Users\vacla\OneDrive\Dokumenty\StinProjekt\backend\target\classes started by vacla in C:\Users\vacla\OneDrive\Dokumenty\StinProjekt\backend)
+2026-04-20 14:47:58 [DEBUG] c.c.backend.BackendApplication - Running with Spring Boot v4.0.5, Spring v7.0.6
+2026-04-20 14:47:58 [INFO] c.c.backend.BackendApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-20 14:47:58 [INFO] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-04-20 14:47:58 [INFO] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-04-20 14:48:00 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-20 14:48:00 [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-20 14:48:00 [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-04-20 14:48:00 [INFO] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 2554 ms
+2026-04-20 14:48:01 [INFO] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-20 14:48:02 [INFO] o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-04-20 14:48:02 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-04-20 14:48:02 [INFO] c.c.backend.BackendApplication - Started BackendApplication in 5.746 seconds (process running for 6.947)
+2026-04-20 14:48:02 [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-20 14:48:02 [INFO] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-04-20 14:48:03 [INFO] o.s.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+2026-04-20 14:48:55 [INFO] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-04-20 14:48:55 [INFO] o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-20 14:48:55 [INFO] o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-04-20 14:48:55 [INFO] c.c.backend.BackendApplication - Starting BackendApplication using Java 21.0.10 with PID 30348 (C:\Users\vacla\OneDrive\Dokumenty\StinProjekt\backend\target\classes started by vacla in C:\Users\vacla\OneDrive\Dokumenty\StinProjekt\backend)
+2026-04-20 14:48:55 [DEBUG] c.c.backend.BackendApplication - Running with Spring Boot v4.0.5, Spring v7.0.6
+2026-04-20 14:48:55 [INFO] c.c.backend.BackendApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-20 14:48:58 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-20 14:48:58 [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-20 14:48:58 [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-04-20 14:48:58 [INFO] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 2369 ms
+2026-04-20 14:48:58 [INFO] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-20 14:48:59 [INFO] o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-04-20 14:48:59 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-04-20 14:48:59 [INFO] c.c.backend.BackendApplication - Started BackendApplication in 3.988 seconds (process running for 63.641)
+2026-04-20 14:48:59 [INFO] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-04-20 14:49:00 [INFO] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-04-20 14:49:00 [INFO] o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-20 14:49:00 [INFO] o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-04-20 14:49:01 [INFO] c.c.backend.BackendApplication - Starting BackendApplication using Java 21.0.10 with PID 30348 (C:\Users\vacla\OneDrive\Dokumenty\StinProjekt\backend\target\classes started by vacla in C:\Users\vacla\OneDrive\Dokumenty\StinProjekt\backend)
+2026-04-20 14:49:01 [DEBUG] c.c.backend.BackendApplication - Running with Spring Boot v4.0.5, Spring v7.0.6
+2026-04-20 14:49:01 [INFO] c.c.backend.BackendApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-20 14:49:02 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-20 14:49:02 [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-20 14:49:02 [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-04-20 14:49:02 [INFO] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1236 ms
+2026-04-20 14:49:02 [INFO] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-20 14:49:03 [INFO] o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-04-20 14:49:03 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-04-20 14:49:03 [INFO] c.c.backend.BackendApplication - Started BackendApplication in 2.219 seconds (process running for 67.373)
+2026-04-20 14:49:03 [INFO] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-04-20 14:49:04 [INFO] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-04-20 14:49:04 [INFO] o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-20 14:49:04 [INFO] o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-04-20 14:49:05 [INFO] c.c.backend.BackendApplication - Starting BackendApplication using Java 21.0.10 with PID 30348 (C:\Users\vacla\OneDrive\Dokumenty\StinProjekt\backend\target\classes started by vacla in C:\Users\vacla\OneDrive\Dokumenty\StinProjekt\backend)
+2026-04-20 14:49:05 [DEBUG] c.c.backend.BackendApplication - Running with Spring Boot v4.0.5, Spring v7.0.6
+2026-04-20 14:49:05 [INFO] c.c.backend.BackendApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-20 14:49:05 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-20 14:49:05 [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-20 14:49:05 [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-04-20 14:49:05 [INFO] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 563 ms
+2026-04-20 14:49:05 [INFO] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-20 14:49:05 [INFO] o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-04-20 14:49:05 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-04-20 14:49:05 [INFO] c.c.backend.BackendApplication - Started BackendApplication in 0.852 seconds (process running for 69.923)
+2026-04-20 14:49:05 [INFO] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-04-20 14:49:05 [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-20 14:49:05 [INFO] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-04-20 14:49:05 [INFO] o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-04-20 14:49:07 [INFO] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-04-20 14:49:07 [INFO] o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-20 14:49:07 [INFO] o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-04-20 14:49:07 [INFO] c.c.backend.BackendApplication - Starting BackendApplication using Java 21.0.10 with PID 30348 (C:\Users\vacla\OneDrive\Dokumenty\StinProjekt\backend\target\classes started by vacla in C:\Users\vacla\OneDrive\Dokumenty\StinProjekt\backend)
+2026-04-20 14:49:07 [DEBUG] c.c.backend.BackendApplication - Running with Spring Boot v4.0.5, Spring v7.0.6
+2026-04-20 14:49:07 [INFO] c.c.backend.BackendApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-20 14:49:07 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-20 14:49:07 [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-20 14:49:07 [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-04-20 14:49:07 [INFO] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 414 ms
+2026-04-20 14:49:07 [INFO] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-20 14:49:08 [INFO] o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-04-20 14:49:08 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-04-20 14:49:08 [INFO] c.c.backend.BackendApplication - Started BackendApplication in 0.837 seconds (process running for 72.265)
+2026-04-20 14:49:08 [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-20 14:49:08 [INFO] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-04-20 14:49:08 [INFO] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-04-20 14:49:08 [INFO] o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2026-04-20 14:49:15 [INFO] c.c.backend.BackendApplication - Starting BackendApplication using Java 21.0.10 with PID 30636 (C:\Users\vacla\OneDrive\Dokumenty\StinProjekt\backend\target\classes started by vacla in C:\Users\vacla\OneDrive\Dokumenty\StinProjekt\backend)
+2026-04-20 14:49:15 [DEBUG] c.c.backend.BackendApplication - Running with Spring Boot v4.0.5, Spring v7.0.6
+2026-04-20 14:49:15 [INFO] c.c.backend.BackendApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-20 14:49:15 [INFO] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-04-20 14:49:15 [INFO] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-04-20 14:49:17 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-20 14:49:17 [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-20 14:49:17 [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-04-20 14:49:18 [INFO] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 2388 ms
+2026-04-20 14:49:18 [INFO] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-20 14:49:19 [INFO] o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-04-20 14:49:20 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-04-20 14:49:20 [INFO] c.c.backend.BackendApplication - Started BackendApplication in 5.169 seconds (process running for 6.113)
+2026-04-20 14:49:20 [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-20 14:49:20 [INFO] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-04-20 14:49:20 [INFO] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-04-20 14:50:20 [INFO] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-04-20 14:50:20 [INFO] o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-20 14:50:20 [INFO] o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-04-20 14:50:21 [INFO] c.c.backend.BackendApplication - Starting BackendApplication using Java 21.0.10 with PID 30636 (C:\Users\vacla\OneDrive\Dokumenty\StinProjekt\backend\target\classes started by vacla in C:\Users\vacla\OneDrive\Dokumenty\StinProjekt\backend)
+2026-04-20 14:50:21 [DEBUG] c.c.backend.BackendApplication - Running with Spring Boot v4.0.5, Spring v7.0.6
+2026-04-20 14:50:21 [INFO] c.c.backend.BackendApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-20 14:50:22 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-20 14:50:22 [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-20 14:50:22 [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-04-20 14:50:22 [INFO] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1125 ms
+2026-04-20 14:50:22 [INFO] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-20 14:50:23 [INFO] o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-04-20 14:50:23 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-04-20 14:50:23 [INFO] c.c.backend.BackendApplication - Started BackendApplication in 2.187 seconds (process running for 69.209)
+2026-04-20 14:50:23 [INFO] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-04-20 14:50:24 [INFO] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-04-20 14:50:24 [INFO] o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-20 14:50:24 [INFO] o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-04-20 14:50:25 [INFO] c.c.backend.BackendApplication - Starting BackendApplication using Java 21.0.10 with PID 30636 (C:\Users\vacla\OneDrive\Dokumenty\StinProjekt\backend\target\classes started by vacla in C:\Users\vacla\OneDrive\Dokumenty\StinProjekt\backend)
+2026-04-20 14:50:25 [DEBUG] c.c.backend.BackendApplication - Running with Spring Boot v4.0.5, Spring v7.0.6
+2026-04-20 14:50:25 [INFO] c.c.backend.BackendApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-20 14:50:25 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-20 14:50:25 [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-20 14:50:25 [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-04-20 14:50:25 [INFO] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 624 ms
+2026-04-20 14:50:25 [INFO] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-20 14:50:25 [INFO] o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-04-20 14:50:26 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-04-20 14:50:26 [INFO] c.c.backend.BackendApplication - Started BackendApplication in 1.122 seconds (process running for 72.096)
+2026-04-20 14:50:26 [INFO] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-04-20 14:50:27 [INFO] o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-04-20 14:50:27 [INFO] o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-20 14:50:27 [INFO] o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-04-20 14:50:27 [INFO] c.c.backend.BackendApplication - Starting BackendApplication using Java 21.0.10 with PID 30636 (C:\Users\vacla\OneDrive\Dokumenty\StinProjekt\backend\target\classes started by vacla in C:\Users\vacla\OneDrive\Dokumenty\StinProjekt\backend)
+2026-04-20 14:50:27 [DEBUG] c.c.backend.BackendApplication - Running with Spring Boot v4.0.5, Spring v7.0.6
+2026-04-20 14:50:27 [INFO] c.c.backend.BackendApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-20 14:50:28 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-20 14:50:28 [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-20 14:50:28 [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-04-20 14:50:28 [INFO] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 775 ms
+2026-04-20 14:50:28 [INFO] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-20 14:50:28 [INFO] o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-04-20 14:50:28 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-04-20 14:50:28 [INFO] c.c.backend.BackendApplication - Started BackendApplication in 1.396 seconds (process running for 74.959)
+2026-04-20 14:50:28 [INFO] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-04-20 14:50:38 [INFO] c.c.backend.BackendApplication - Starting BackendApplication using Java 21.0.10 with PID 24572 (C:\Users\vacla\OneDrive\Dokumenty\StinProjekt\backend\target\classes started by vacla in C:\Users\vacla\OneDrive\Dokumenty\StinProjekt\backend)
+2026-04-20 14:50:38 [DEBUG] c.c.backend.BackendApplication - Running with Spring Boot v4.0.5, Spring v7.0.6
+2026-04-20 14:50:38 [INFO] c.c.backend.BackendApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-20 14:50:38 [INFO] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-04-20 14:50:38 [INFO] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-04-20 14:50:41 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-20 14:50:41 [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-20 14:50:41 [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-04-20 14:50:42 [INFO] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 3276 ms
+2026-04-20 14:50:42 [INFO] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-20 14:50:44 [INFO] o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-04-20 14:50:44 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-04-20 14:50:44 [INFO] c.c.backend.BackendApplication - Started BackendApplication in 6.777 seconds (process running for 7.992)
+2026-04-20 14:50:44 [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-20 14:50:44 [INFO] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-04-20 14:50:44 [INFO] o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2026-04-20 14:51:57 [INFO] c.c.backend.BackendApplication - Starting BackendApplication using Java 21.0.10 with PID 8924 (C:\Users\vacla\OneDrive\Dokumenty\StinProjekt\backend\target\classes started by vacla in C:\Users\vacla\OneDrive\Dokumenty\StinProjekt\backend)
+2026-04-20 14:51:57 [DEBUG] c.c.backend.BackendApplication - Running with Spring Boot v4.0.5, Spring v7.0.6
+2026-04-20 14:51:57 [INFO] c.c.backend.BackendApplication - No active profile set, falling back to 1 default profile: "default"
+2026-04-20 14:51:57 [INFO] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-04-20 14:51:57 [INFO] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-04-20 14:51:59 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-04-20 14:51:59 [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-04-20 14:51:59 [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-04-20 14:52:00 [INFO] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 2663 ms
+2026-04-20 14:52:00 [INFO] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-04-20 14:52:01 [INFO] o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-04-20 14:52:02 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-04-20 14:52:02 [INFO] c.c.backend.BackendApplication - Started BackendApplication in 5.522 seconds (process running for 6.746)
+2026-04-20 14:52:02 [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-20 14:52:02 [INFO] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-04-20 14:52:02 [INFO] o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
