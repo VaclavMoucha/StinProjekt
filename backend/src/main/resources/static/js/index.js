@@ -46,3 +46,61 @@ function loadRates() {
     })
     .catch((error) => showError(error));
 }
+
+function loadStrongest() {
+  fetch("/api/rates/strongest", { headers })
+    .then((response) => {
+      if (!response.ok) throw new Error("API error");
+      return response.json();
+    })
+    .then((data) => {
+      document.getElementById("strongest").textContent =
+        `${data.currency} (${data.rate.toFixed(4)})`;
+    })
+    .catch((error) => showError(error));
+}
+
+function loadWeakest() {
+  fetch("/api/rates/weakest", { headers })
+    .then((response) => {
+      if (!response.ok) throw new Error("API error");
+      return response.json();
+    })
+    .then((data) => {
+      document.getElementById("weakest").textContent =
+        `${data.currency} (${data.rate.toFixed(4)})`;
+    })
+    .catch((error) => showError(error));
+}
+
+function loadAverage() {
+  const from = document.getElementById("from-date").value;
+  const to = document.getElementById("to-date").value;
+
+  if (!from || !to) {
+    alert("Vyplňte obě data!");
+    return;
+  }
+
+  fetch(`/api/rates/average?from=${from}&to=${to}`, { headers })
+    .then((response) => {
+      if (!response.ok) throw new Error("API error");
+      return response.json();
+    })
+    .then((data) => {
+      const tbody = document.getElementById("average-table");
+      tbody.innerHTML = "";
+      data.forEach((rate) => {
+        tbody.innerHTML += `
+                    <tr>
+                        <td>${rate.currency}</td>
+                        <td>${rate.rate.toFixed(4)}</td>
+                    </tr>`;
+      });
+    })
+    .catch((error) => showError(error));
+}
+
+loadRates();
+loadStrongest();
+loadWeakest();
