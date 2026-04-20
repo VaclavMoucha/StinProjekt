@@ -172,6 +172,7 @@ function loadChart() {
     })
     .catch((error) => showError(error));
 }
+updateLanguage();
 loadSelectedCurrency();
 loadRates();
 loadStrongest();

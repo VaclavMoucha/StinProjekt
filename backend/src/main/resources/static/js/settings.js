@@ -102,5 +102,5 @@ function saveSettings() {
       document.getElementById("error-message").classList.remove("hidden");
     });
 }
-
+updateLanguage();
 loadCurrencies();
