@@ -100,4 +100,13 @@ public class RatesService {
         logger.info("Fetching available currencies");
         return frankfurterClient.getCurrencies();
     }
+
+    public FrankfurterHistoricalResponse getHistoricalRates(String from, String to) {
+        var settings = settingsRepository.getSettings();
+        if (settings == null)
+            throw new SettingsNotFoundException();
+        return frankfurterClient.getHistoricalRates(
+                settings.getPreferredCurrency(), from, to,
+                settings.getSelectedCurrencies());
+    }
 }
