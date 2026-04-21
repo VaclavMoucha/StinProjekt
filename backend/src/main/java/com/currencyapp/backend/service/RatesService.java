@@ -109,4 +109,5 @@ public class RatesService {
                 settings.getPreferredCurrency(), from, to,
                 settings.getSelectedCurrencies());
     }
+    
 }

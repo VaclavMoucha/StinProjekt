@@ -95,4 +95,28 @@ public class RatesServicTest {
 
         });
     }
+
+    @Test
+    void getLatestRates_logsErrorWhenApiFails() {
+
+        UserSettings settings = new UserSettings("EUR", List.of("USD"));
+        when(settingsRepository.getSettings()).thenReturn(settings);
+        when(frankfurterClient.getLatestRates(any(), any())).thenThrow(new RuntimeException("API Down"));
+
+        assertThrows(RuntimeException.class, () -> {
+            ratesService.getLatestRates();
+        });
+    }
+
+    @Test
+    void getCurrencies_returnsMap() {
+
+        Map<String, String> currencies = Map.of("EUR", "Euro");
+        when(frankfurterClient.getCurrencies()).thenReturn(currencies);
+
+        Map<String, String> result = ratesService.getCurrencies();
+
+        assertEquals(1, result.size());
+        assertEquals("Euro", result.get("EUR"));
+    }
 }
