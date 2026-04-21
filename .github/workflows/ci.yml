@@ -63,6 +63,4 @@ jobs:
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'currencyApp'
-          
-          slot-name: ${{ github.ref == 'refs/heads/main' && 'Production' || 'Staging' }}
           package: '.' 
