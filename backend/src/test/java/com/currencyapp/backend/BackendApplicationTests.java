@@ -5,9 +5,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class BackendApplicationTests {
-
 	@Test
-	void contextLoads() {
+	void mainTest() {
+
+		BackendApplication.main(new String[] {});
 	}
 
 }
