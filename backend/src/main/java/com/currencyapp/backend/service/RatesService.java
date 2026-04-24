@@ -55,25 +55,34 @@ public class RatesService {
     }
 
     public ExchangeRate getStrongest() {
+        logger.debug("Calculating strongest currency from latest rates");
         FrankfurterResponse response = getLatestRates();
         Map<String, Double> rates = response.getRates();
         Map.Entry<String, Double> strongest = rates.entrySet().stream().max(Map.Entry.comparingByValue()).get();
+        logger.info("Strongest currency: {} with rate {}", strongest.getKey(), strongest.getValue());
         return new ExchangeRate(strongest.getKey(), strongest.getValue(), response.getDate());
     }
 
     public ExchangeRate getWeakest() {
+        logger.debug("Calculating weakest currency from latest rates");
         FrankfurterResponse response = getLatestRates();
         Map<String, Double> rates = response.getRates();
         Map.Entry<String, Double> weakest = rates.entrySet().stream().min(Map.Entry.comparingByValue()).get();
+        logger.info("Weakest currency: {} with rate {}", weakest.getKey(), weakest.getValue());
         return new ExchangeRate(weakest.getKey(), weakest.getValue(), response.getDate());
     }
 
     public List<ExchangeRate> getAverage(String from, String to) {
         var settings = settingsRepository.getSettings();
+        logger.info("Calculating average rates from {} to {} for {}", from, to, settings.getPreferredCurrency());
         FrankfurterHistoricalResponse response = frankfurterClient.getHistoricalRates(
                 settings.getPreferredCurrency(), from, to,
                 settings.getSelectedCurrencies());
 
+        if (response.getRates().isEmpty()) {
+            logger.warn("No historical data found for period {} - {}", from, to);
+            return new ArrayList<>();
+        }
         Map<String, List<Double>> ratesPerCurrency = new HashMap<>();
 
         for (Map<String, Double> dayRates : response.getRates().values()) {
@@ -103,11 +112,13 @@ public class RatesService {
 
     public FrankfurterHistoricalResponse getHistoricalRates(String from, String to) {
         var settings = settingsRepository.getSettings();
-        if (settings == null)
+        if (settings == null) {
+            logger.info("Settings not found when fetching historical rates please configure settings first");
             throw new SettingsNotFoundException();
+        }
         return frankfurterClient.getHistoricalRates(
                 settings.getPreferredCurrency(), from, to,
                 settings.getSelectedCurrencies());
     }
-    
+
 }
