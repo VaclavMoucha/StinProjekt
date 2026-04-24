@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-cs="Směnárenská aplikace" data-en="Currency App">
+      Currency App
+    </title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav>
+      <span data-cs="Směnárenská aplikace" data-en="Currency App"
+        >Currency App</span
+      >
+      <div>
+        <a href="index.html" data-cs="Měny" data-en="Dashboard">Dashboard</a>
+        <a href="settings.html" data-cs="Nastavení" data-en="Settings"
+          >Settings</a
+        >
+        <a class="langButton" data-cs="EN" data-en="CS">CS</a>
+        <form action="/logout" method="POST" class="logout-form">
+          <button
+            type="submit"
+            class="logout-link"
+            data-cs="Odhlásit"
+            data-en="Logout"
+          >
+            Logout
+          </button>
+        </form>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="card">
+        <h2 data-cs="Nastavení" data-en="Settings">Settings</h2>
+
+        <div class="form-group">
+          <label data-cs="Základní měna" data-en="Base Currency"
+            >Base Currency</label
+          >
+          <select id="base-currency">
+            <option>Načítání...</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label data-cs="Sledované měny" data-en="Watched Currencies"
+            >Watched Currencies</label
+          >
+          <div id="currencies-list" >
+           
+          </div>
+        </div>
+
+        <button
+          onclick="saveSettings()"
+          data-cs="Uložit nastavení"
+          data-en="Save Settings"
+        >
+          Save Settings
+        </button>
+
+        <div
+          id="success-message"
+          class="hidden"
+          style="color: green; margin-top: 15px"
+          data-cs="Nastavení uloženo!!!!!!!!!!!!!!!!"
+          data-en="Settings saved !!!!!!!!!!!!!!!!!!!!"
+        >
+          Settings saved !!!!!!!!!!!!!!!!!!!!
+        </div>
+
+        <div
+          id="error-message"
+          class="hidden"
+          style="color: red; margin-top: 15px"
+          data-cs="Chyba při ukládání!!!!!!!!!!!!!!!!!!"
+          data-en="Error while saving !!!!!!!!!!!!!!!!!"
+        >
+          Error while saving !!!!!!!!!!!!!!!!!
+        </div>
+      </div>
+    </div>
+
+    <script src="js/settings.js"></script>
+  </body>
+</html>
