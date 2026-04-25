@@ -46,13 +46,29 @@ function loadRates() {
     })
     .then((data) => {
       const tbody = document.getElementById("rates-table");
+      const checkboxContainer = document.getElementById("checkbox-container");
+
       tbody.innerHTML = "";
+      if (checkboxContainer) checkboxContainer.innerHTML = "";
+
       for (const [currency, rate] of Object.entries(data.rates)) {
+        // Tabulka (původní kód)
         tbody.innerHTML += `
                     <tr>
                         <td>${currency}</td>
                         <td>${rate.toFixed(4)}</td>
                     </tr>`;
+        if (checkboxContainer) {
+          const label = document.createElement("label");
+          label.style =
+            "display: inline-flex; align-items: center; margin-right: 15px; cursor: pointer; padding: 5px; border: 1px solid #eee; border-radius: 4px; margin-bottom: 5px;";
+
+          label.innerHTML = `
+            <input type="checkbox" class="chart-curr-checkbox" value="${currency}" checked>
+            <span style="margin-left: 5px;">${currency}</span>
+          `;
+          checkboxContainer.appendChild(label);
+        }
       }
     })
     .catch((error) => showError(error));
@@ -115,8 +131,18 @@ function loadChart() {
   const from = document.getElementById("chart-from-date").value;
   const to = document.getElementById("chart-to-date").value;
 
+  const selectedCheckboxes = document.querySelectorAll(
+    ".chart-curr-checkbox:checked",
+  );
+  const activeCurrencies = Array.from(selectedCheckboxes).map((cb) => cb.value);
+
   if (!from || !to) {
     alert("Vyplňte obě data!");
+    return;
+  }
+
+  if (activeCurrencies.length === 0) {
+    alert("Zaškrtněte alespoň jednu měnu!");
     return;
   }
 
@@ -127,46 +153,37 @@ function loadChart() {
     })
     .then((data) => {
       const dates = Object.keys(data.rates).sort();
-      const currencies = Object.keys(data.rates[dates[0]]);
-      console.log(dates, currencies, data.rates);
+      const currencies = Object.keys(data.rates[dates[0]]).filter((c) =>
+        activeCurrencies.includes(c),
+      );
+
       const colors = [
-        "rgba(76, 175, 80, 1)",
-        "rgba(33, 150, 243, 1)",
-        "rgba(255, 87, 34, 1)",
-        "rgba(156, 39, 176, 1)",
-        "rgba(255, 193, 7, 1)",
+        "#4caf50",
+        "#2196f3",
+        "#ff5722",
+        "#9c27b0",
+        "#ffc107",
+        "#00bcd4",
       ];
 
       const datasets = currencies.map((currency, index) => ({
         label: currency,
         data: dates.map((date) => data.rates[date][currency]),
         borderColor: colors[index % colors.length],
-        backgroundColor: colors[index % colors.length].replace("1)", "0.1)"),
+        backgroundColor: colors[index % colors.length] + "1A", // jemné pozadí
         borderWidth: 2,
-        pointRadius: 3,
         tension: 0.3,
       }));
 
       const ctx = document.getElementById("historicalChart").getContext("2d");
-
       if (window.myHistoricalChart) window.myHistoricalChart.destroy();
 
       window.myHistoricalChart = new Chart(ctx, {
         type: "line",
-        data: {
-          labels: dates,
-          datasets: datasets,
-        },
+        data: { labels: dates, datasets: datasets },
         options: {
           responsive: true,
-          plugins: {
-            legend: { position: "top" },
-          },
-          scales: {
-            y: {
-              beginAtZero: false,
-            },
-          },
+          plugins: { legend: { position: "top" } },
         },
       });
     })
